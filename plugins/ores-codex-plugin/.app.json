@@ -1,0 +1,16 @@
+{
+  "apps": {
+    "github": {
+      "id": "connector_76869538009648d5b282a4bb21c3d157",
+      "category": "Developer Tools"
+    },
+    "linear": {
+      "id": "asdk_app_69a089a326dc8191b32a3f2553f5be2c",
+      "category": "Productivity"
+    },
+    "slack": {
+      "id": "asdk_app_69a1d78e929881919bba0dbda1f6436d",
+      "category": "Communication"
+    }
+  }
+}

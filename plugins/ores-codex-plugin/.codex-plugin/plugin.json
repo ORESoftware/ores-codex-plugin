@@ -1,0 +1,43 @@
+{
+  "name": "ores-codex-plugin",
+  "version": "0.1.0",
+  "description": "Coordinate Ores Software engineering work across GitHub, Linear, and Slack.",
+  "author": {
+    "name": "Ores Software",
+    "email": "alexander.d.mills@gmail.com",
+    "url": "https://github.com/oresoftware"
+  },
+  "homepage": "https://github.com/oresoftware/ores-codex-plugin",
+  "repository": "https://github.com/oresoftware/ores-codex-plugin",
+  "license": "MIT",
+  "keywords": [
+    "oresoftware",
+    "github",
+    "linear",
+    "slack",
+    "engineering operations"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Ores Engineering Ops",
+    "shortDescription": "Coordinate GitHub, Linear, and Slack",
+    "longDescription": "Run Ores Software engineering workflows across the oresoftware GitHub organization, the authorized Linear account, and the Ores Software Slack workspace.",
+    "developerName": "Ores Software",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/oresoftware/ores-codex-plugin",
+    "privacyPolicyURL": "https://github.com/oresoftware/ores-codex-plugin/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/oresoftware/ores-codex-plugin/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Triage Ores GitHub work into Linear and draft a Slack update",
+      "Summarize active Ores pull requests and linked Linear issues",
+      "Turn a Slack engineering request into a linked Linear issue"
+    ],
+    "brandColor": "#5E6AD2"
+  }
+}
