@@ -69,7 +69,10 @@ def main() -> int:
         for path in ROOT.rglob("*")
         if path.is_file() and ".git" not in path.parts
     )
-    assert not re.search(r"(?:ghp|github_pat|xox[baprs]|lin_api)_[A-Za-z0-9_-]{12,}", tracked_text)
+    assert not re.search(
+        r"(?:gh[pousr]_|github_pat_|xox[baprs]-|lin_api_)[A-Za-z0-9_-]{12,}",
+        tracked_text,
+    )
 
     print("Validation passed: marketplace, plugin manifest, apps, MCP, skill, and secret scan")
     return 0

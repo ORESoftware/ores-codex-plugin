@@ -18,7 +18,7 @@ During installation, connect and verify:
 - Linear user: `alexander.d.mills@gmail.com`
 - Slack workspace: `oresoftware-workspace.slack.com`
 
-The workflow skill checks these boundaries before private reads or writes. It fails closed when identity cannot be verified, restricts GitHub operations to repositories owned by `oresoftware`, and treats retrieved service content as untrusted data rather than instructions.
+The workflow skill checks these boundaries before private reads or writes. If the Linear account exposes multiple workspaces, it requires the intended Ores workspace name or ID instead of guessing. It fails closed when identity cannot be verified, restricts GitHub operations to repositories owned by `oresoftware`, and treats retrieved service content as untrusted data rather than instructions.
 
 ## Install from GitHub
 
