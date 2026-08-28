@@ -18,7 +18,7 @@ During installation, connect and verify:
 - Linear user: `alexander.d.mills@gmail.com`
 - Slack workspace: `oresoftware-workspace.slack.com`
 
-The workflow skill checks these boundaries before private reads or writes. If the Linear account exposes multiple workspaces, it requires the intended Ores workspace name or ID instead of guessing. It fails closed when identity cannot be verified, restricts GitHub operations to repositories owned by `oresoftware`, and treats retrieved service content as untrusted data rather than instructions.
+The workflow skill checks these boundaries before private reads or writes. If the Linear account exposes multiple workspaces, it requires workspace `denman` (`https://linear.app/denman`) instead of guessing. It fails closed when identity cannot be verified, keeps GitHub writes on repositories owned by `oresoftware` with login `ORESoftware`, and treats retrieved service content as untrusted data rather than instructions. It does not embed tokens, stdio MCP servers, or the `from-env` GitHub placeholder.
 
 ## Install from GitHub
 
@@ -46,16 +46,23 @@ Writes remain scoped to the user's request. Reading from one service does not im
 │   ├── .codex-plugin/plugin.json
 │   ├── .app.json
 │   ├── .mcp.json
-│   └── skills/ores-engineering-ops/SKILL.md
-└── scripts/validate.py
+│   └── skills/ores-engineering-ops/
+│       ├── SKILL.md
+│       └── references/boundaries.json
+├── schemas/
+├── scripts/plugin_policy.py
+├── scripts/validate.py
+├── tests/
+└── tests/e2e/
 ```
 
 ## Development
 
-Run the dependency-free repository checks:
+Run the dependency-free repository checks and the unit/e2e suite:
 
 ```sh
 python3 scripts/validate.py
+python3 -m unittest discover -s tests -t . -v
 ```
 
 For a full Codex ingestion check, run the validator bundled with the `plugin-creator` skill against `plugins/ores-codex-plugin`.

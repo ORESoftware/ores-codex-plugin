@@ -1,0 +1,22 @@
+{
+  "github": {
+    "owners": ["oresoftware"],
+    "logins": ["ORESoftware"],
+    "secondaryLogins": ["the1mills"]
+  },
+  "linear": {
+    "userEmail": "alexander.d.mills@gmail.com",
+    "workspaceName": "denman",
+    "workspaceUrl": "https://linear.app/denman",
+    "mcpUrl": "https://mcp.linear.app/mcp"
+  },
+  "slack": {
+    "domain": "oresoftware-workspace.slack.com",
+    "teamId": "T01B3C83PMK"
+  },
+  "apps": {
+    "github": "connector_76869538009648d5b282a4bb21c3d157",
+    "linear": "asdk_app_69a089a326dc8191b32a3f2553f5be2c",
+    "slack": "asdk_app_69a1d78e929881919bba0dbda1f6436d"
+  }
+}

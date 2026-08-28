@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/oresoftware/ores-codex-plugin/schemas/mcp.schema.json",
+  "title": "Codex .mcp.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mcpServers"],
+  "properties": {
+    "mcpServers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["linear"],
+      "properties": {
+        "linear": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "url", "oauth_resource"],
+          "properties": {
+            "type": { "type": "string", "const": "http" },
+            "url": { "type": "string", "const": "https://mcp.linear.app/mcp" },
+            "oauth_resource": { "type": "string", "const": "https://mcp.linear.app/mcp" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/oresoftware/ores-codex-plugin/schemas/plugin.schema.json",
+  "title": "Codex plugin.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "version",
+    "description",
+    "author",
+    "homepage",
+    "repository",
+    "license",
+    "keywords",
+    "skills",
+    "mcpServers",
+    "apps",
+    "interface"
+  ],
+  "properties": {
+    "name": { "type": "string", "const": "ores-codex-plugin" },
+    "version": { "type": "string", "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:[-+][0-9A-Za-z.-]+)?$" },
+    "description": { "type": "string", "minLength": 1 },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "email", "url"],
+      "properties": {
+        "name": { "type": "string", "const": "Ores Software" },
+        "email": { "type": "string", "format": "email" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "homepage": { "type": "string", "format": "uri" },
+    "repository": { "type": "string", "format": "uri" },
+    "license": { "type": "string", "const": "MIT" },
+    "keywords": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "skills": { "type": "string", "const": "./skills/" },
+    "mcpServers": { "type": "string", "const": "./.mcp.json" },
+    "apps": { "type": "string", "const": "./.app.json" },
+    "interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "displayName",
+        "shortDescription",
+        "longDescription",
+        "developerName",
+        "category",
+        "capabilities",
+        "websiteURL",
+        "privacyPolicyURL",
+        "termsOfServiceURL",
+        "defaultPrompt",
+        "brandColor"
+      ],
+      "properties": {
+        "displayName": { "type": "string", "minLength": 1 },
+        "shortDescription": { "type": "string", "minLength": 1 },
+        "longDescription": { "type": "string", "minLength": 1 },
+        "developerName": { "type": "string", "minLength": 1 },
+        "category": { "type": "string", "const": "Productivity" },
+        "capabilities": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "enum": ["Interactive", "Read", "Write"] }
+        },
+        "websiteURL": { "type": "string", "format": "uri" },
+        "privacyPolicyURL": { "type": "string", "format": "uri" },
+        "termsOfServiceURL": { "type": "string", "format": "uri" },
+        "defaultPrompt": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": { "type": "string", "minLength": 1, "maxLength": 128 }
+        },
+        "brandColor": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+      }
+    }
+  }
+}

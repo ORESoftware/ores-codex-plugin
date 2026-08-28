@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/oresoftware/ores-codex-plugin/schemas/boundaries.schema.json",
+  "title": "Ores engineering-ops account boundaries",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["github", "linear", "slack", "apps"],
+  "properties": {
+    "github": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owners", "logins", "secondaryLogins"],
+      "properties": {
+        "owners": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "const": "oresoftware" }
+        },
+        "logins": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "const": "ORESoftware" }
+        },
+        "secondaryLogins": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "const": "the1mills" }
+        }
+      }
+    },
+    "linear": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["userEmail", "workspaceName", "workspaceUrl", "mcpUrl"],
+      "properties": {
+        "userEmail": { "type": "string", "const": "alexander.d.mills@gmail.com" },
+        "workspaceName": { "type": "string", "const": "denman" },
+        "workspaceUrl": { "type": "string", "const": "https://linear.app/denman" },
+        "mcpUrl": { "type": "string", "const": "https://mcp.linear.app/mcp" }
+      }
+    },
+    "slack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "teamId"],
+      "properties": {
+        "domain": { "type": "string", "const": "oresoftware-workspace.slack.com" },
+        "teamId": { "type": "string", "const": "T01B3C83PMK" }
+      }
+    },
+    "apps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["github", "linear", "slack"],
+      "properties": {
+        "github": { "type": "string", "const": "connector_76869538009648d5b282a4bb21c3d157" },
+        "linear": { "type": "string", "const": "asdk_app_69a089a326dc8191b32a3f2553f5be2c" },
+        "slack": { "type": "string", "const": "asdk_app_69a1d78e929881919bba0dbda1f6436d" }
+      }
+    }
+  }
+}

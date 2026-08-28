@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/oresoftware/ores-codex-plugin/schemas/app.schema.json",
+  "title": "Codex .app.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["apps"],
+  "properties": {
+    "apps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["github", "linear", "slack"],
+      "properties": {
+        "github": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "category"],
+          "properties": {
+            "id": { "type": "string", "const": "connector_76869538009648d5b282a4bb21c3d157" },
+            "category": { "type": "string", "const": "Developer Tools" }
+          }
+        },
+        "linear": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "category"],
+          "properties": {
+            "id": { "type": "string", "const": "asdk_app_69a089a326dc8191b32a3f2553f5be2c" },
+            "category": { "type": "string", "const": "Productivity" }
+          }
+        },
+        "slack": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "category"],
+          "properties": {
+            "id": { "type": "string", "const": "asdk_app_69a1d78e929881919bba0dbda1f6436d" },
+            "category": { "type": "string", "const": "Communication" }
+          }
+        }
+      }
+    }
+  }
+}
