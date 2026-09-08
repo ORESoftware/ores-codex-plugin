@@ -21,3 +21,7 @@ secrets/
 *.sqlite
 .coverage
 htmlcov/
+
+# Local temporary directories and repository-owned worktrees
+tmp/
+temp/
